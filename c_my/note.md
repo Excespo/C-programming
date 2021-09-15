@@ -1,6 +1,5 @@
 # notebook for my C programming lesson
 
-
 - [notebook for my C programming lesson](#notebook-for-my-c-programming-lesson)
   - [vim(linux)](#vimlinux)
   - [check env for c](#check-env-for-c)
@@ -12,6 +11,8 @@
   - [constants for c](#constants-for-c)
   - [usage of argc& argv](#usage-of-argc-argv)
   - [header guard](#header-guard)
+  - [do while0 for macro protection](#do-while0-for-macro-protection)
+  - [macro extention rules](#macro-extention-rules)
 
 
 ## vim(linux)
@@ -118,3 +119,15 @@ suffix ```U/u``` for unsigned, ```L/l``` for long
 use ```#define```, ```#ifdef```, ```#ifndef```, ```#endif``` to prevent the case of multi-include
 
 [header guard example](support-notemd/header_guard/main.c)
+
+## do while0 for macro protection
+
+To avoid incorrect macro extension in some cases.
+
+[reference: explain fonction of do while0](https://www.jianshu.com/p/99efda8dfec9)
+
+## macro extention rules
+
+[reference: explain rules of macro](https://zhuanlan.zhihu.com/p/125062325)
+
+[example for macro extention(prescaning)](support-notemd/macro_extension.c)
