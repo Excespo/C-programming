@@ -11,6 +11,7 @@
   - [variables for c](#variables-for-c)
   - [constants for c](#constants-for-c)
   - [usage of argc& argv](#usage-of-argc-argv)
+  - [header guard](#header-guard)
 
 
 ## vim(linux)
@@ -92,3 +93,9 @@ suffix ```U/u``` for unsigned, ```L/l``` for long
 ```
 
 ## usage of argc& argv
+
+## header guard
+
+use ```#define```, ```#ifdef```, ```#ifndef```, ```#endif``` to prevent the case of multi-include
+
+[header guard example](support-notemd/header_guard/main.c)
