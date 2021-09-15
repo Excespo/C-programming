@@ -7,5 +7,5 @@ int main();
 void run2(void)
 {
     run();
-    printf("\'inter_included.h\' is included.");
+    printf("\'inter_included.h\' is included.\n");
 }

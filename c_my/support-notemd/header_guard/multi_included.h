@@ -7,6 +7,6 @@ int main();
 
 void run(void)
 {
-    printf("\'multi_included.h\' is included.");
+    printf("\'multi_included.h\' is included.\n");
 }
 #endif

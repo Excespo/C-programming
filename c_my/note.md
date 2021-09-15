@@ -93,6 +93,8 @@ suffix ```U/u``` for unsigned, ```L/l``` for long
 ```
 
 ## usage of argc& argv
+```argc``` signify the total amount of parameters in command line
+```argv``` signify the content in command line, ```argv[0]```, particularly the name of the programme
 
 ## header guard
 
