@@ -63,6 +63,16 @@ $ ./main.out
 
 Or simply run in vscode with code runner plugin
 
+Detailed process of ```gcc```: 
+
+.c -> .i (pre-processing, ```gcc -E```)
+
+.i -> .s (compiling, ```gcc -S```)
+
+.s -> .o (assembling, ```gcc -C```)
+
+.o -> .exe/.out (windows or linux) (linking, ```gcc -o```)
+
 ## basic grammar for c
 - ATTENTION: semi-colon ;
 - comment: ```//``` for single-line, ```/* */```for multi-lines
@@ -100,7 +110,7 @@ suffix ```U/u``` for unsigned, ```L/l``` for long
 
 [argc argv example](support-notemd/argc_argv.c), usage: 
 ```bash
-./a.out xu nen shi sha bi
+./a.out xu neng shi sha bi
 ```
 
 ## header guard
