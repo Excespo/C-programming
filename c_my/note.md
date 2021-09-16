@@ -1,6 +1,7 @@
 # notebook for my C programming lesson
 
 - [notebook for my C programming lesson](#notebook-for-my-c-programming-lesson)
+  - [code standards](#code-standards)
   - [vim(linux)](#vimlinux)
   - [check env for c](#check-env-for-c)
   - [basic structure for c code](#basic-structure-for-c-code)
@@ -13,7 +14,11 @@
   - [header guard](#header-guard)
   - [do while0 for macro protection](#do-while0-for-macro-protection)
   - [macro extention rules](#macro-extention-rules)
+  - [scope](#scope)
 
+## code standards
+
+[HUAWEI standard](https://zhuanlan.zhihu.com/p/346160926)
 
 ## vim(linux)
 
@@ -131,3 +136,21 @@ To avoid incorrect macro extension in some cases.
 [reference: explain rules of macro](https://zhuanlan.zhihu.com/p/125062325)
 
 [example for macro extention(prescaning)](support-notemd/macro_extension.c)
+
+## scope
+
+static: [example for static](support-notemd/action_scope/static.c)
+- As for variables,they are by default local to the scope, therefore within function variables are freed after the function is executed. ```static``` is used to retain values, make the variable legal to be visited within the code file.
+- As for functions, ```static``` reduce the scope of function to the file containing it.
+
+global
+
+opposite to ```static```, extend the scope to outside the file
+
+extern
+
+- ```extern``` (```global``` not) is a keyword in C, showing that the variable isn't define in this file. Compared to ```global``` which refer to the scope, ```extern``` act as a link to a definition elsewhere. Generally, a global argument is defined in source file ```.c```, in order to just include ```.h```, we add ```extern int arg``` in ```.h```.
+- As for functions, ```extern``` implys that the function is defined elsewhere.
+- Difference between declaration and definition: for variables, ```type name``` is always a definition and can be exceuted only once. A single ```extern``` act as a link(declaration to pass preprocess, but detailed definition can be located elsewhere); for functions, ```int func(int arg);``` without ```{}```, with comma ```;```,  is a declaration. Therefore ```extern``` can be omitted in this case.
+
+[reference extern, global, static](https://www.runoob.com/w3cnote/extern-head-h-different.html)
