@@ -27,6 +27,7 @@ int *get_date(char *date_str){
     char *substr = strtok(date_str,seg);
     int i = 0;
     while(substr){
+        // printf("substr, %s\n", substr);
         *(year_month_day+i) = atoi(substr);
         i++;
         substr = strtok(NULL,seg);
@@ -58,9 +59,9 @@ int days_since_ad(int *year_month_day){
     // days in complete months
     for(int m=1;m<month;m++){
         int days_1m = 0;
-        if(m%2==1){
+        if(m==1||m==3||m==5||m==7||m==8||m==10||m==12){
             days_1m = 31;
-        }else if(m%2==0 && m!=2){
+        }else if(m==4||m==6||m==9||m==11){
             days_1m = 30;
         }else{
             days_1m = (leap_year(year))?29:28;
@@ -83,8 +84,10 @@ int calendar(int days){
 
     // compare with 2000-11-12, which is 7
     
-    int origin[3] = {2000,11,12}; 
-    // int origin[3] = {1986,6,1}; 
+    // int origin[3] = {2000,11,12}; 
+    int origin[3] = {1921,1,2}; 
+    // int origin[3] = {0001,01,01};
+
     int diff = days - days_since_ad(origin);
 
     if(diff%7==0){
