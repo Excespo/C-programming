@@ -34,8 +34,9 @@ int main(int argc, char **argv)
 {
     int N;
     N = atoi(argv[1]);
-    for(int i=0; i<=N;i++){
-        printf("terme %d, by loop %d, by recursion %d\n",i,fibbonaci(i),F(i));
-    }
+    // for(int i=0; i<=N;i++){
+    //     printf("terme %d, by loop %d, by recursion %d\n",i,fibbonaci(i),F(i));
+    // }
+    printf("%d\n",fibbonaci(N));
     return 0;
 }

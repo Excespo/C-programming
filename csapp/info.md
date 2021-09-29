@@ -12,3 +12,13 @@ Info for CS:APP
 
 Refer to the book list [here](../README.md)
 
+# (anti) assembly
+
+```bash
+gcc (-Og) -S -o hello.s hello.c
+```
+
+```bash
+gcc -c -o hello.o hello.c
+objdump -s -d hello.o > hello.o.txt
+```

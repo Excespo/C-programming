@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-int *get_date(char *);
+// int *get_date(char *);
 
 int leap_year(int);
 
@@ -10,30 +10,41 @@ int days_since_ad(int *);
 
 int calendar(int);
 
-int main(int argc, char **argv){
-    char *date_str = argv[1];
-    int *year_month_day = get_date(date_str);
+// int main(int argc, char **argv){
+//     char *date_str = argv[1];
+//     int *year_month_day = get_date(date_str);
+//     int days = days_since_ad(year_month_day);
+//     // for(int yr = 1880; yr<2025; yr+=4){
+//     //     printf("year %d is rn: %d\n",yr, leap_year(yr));
+//     // }
+//     printf("%d\n",calendar(days));
+//     return 0;
+// }
+
+int main(void)
+{
+    char *date_str;
+    int year, month, day;
+    scanf("%d-%d-%d",&year, &month, &day);
+    int year_month_day[] = {year, month, day};
     int days = days_since_ad(year_month_day);
-    // for(int yr = 1880; yr<2025; yr+=4){
-    //     printf("year %d is rn: %d\n",yr, leap_year(yr));
-    // }
     printf("%d\n",calendar(days));
     return 0;
 }
 
-int *get_date(char *date_str){
-    int *year_month_day = (int*)malloc(3*sizeof(int));
-    char *seg = "-";
-    char *substr = strtok(date_str,seg);
-    int i = 0;
-    while(substr){
-        // printf("substr, %s\n", substr);
-        *(year_month_day+i) = atoi(substr);
-        i++;
-        substr = strtok(NULL,seg);
-    }
-    return year_month_day;
-}
+// int *get_date(char *date_str){
+//     int *year_month_day = (int*)malloc(3*sizeof(int));
+//     char *seg = "-";
+//     char *substr = strtok(date_str,seg);
+//     int i = 0;
+//     while(substr){
+//         // printf("substr, %s\n", substr);
+//         *(year_month_day+i) = atoi(substr);
+//         i++;
+//         substr = strtok(NULL,seg);
+//     }
+//     return year_month_day;
+// }
 
 // what's the exact rule of leap year
 int leap_year(int year){
@@ -85,8 +96,8 @@ int calendar(int days){
     // compare with 2000-11-12, which is 7
     
     // int origin[3] = {2000,11,12}; 
-    int origin[3] = {1921,1,2}; 
-    // int origin[3] = {0001,01,01};
+    // int origin[3] = {1921,1,2}; 
+    int origin[3] = {0001,01,01};
 
     int diff = days - days_since_ad(origin);
 
