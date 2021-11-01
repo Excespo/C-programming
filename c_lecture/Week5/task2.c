@@ -12,7 +12,7 @@ int main(void)
     int* pA = (int*)malloc(n*sizeof(int)/2 + 1);
     pA[0] = 2;
     int idx = 0; // index of last element in pA
-    while(i++<=n) // test all prime from 2 to max_prime
+    while(i++<=n-1) // test all prime from 2 to max_prime
     {
         int k=0; // test all num in pA
         int isPrime = 1;
