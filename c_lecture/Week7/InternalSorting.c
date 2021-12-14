@@ -121,6 +121,33 @@ void selectionSort(aptr arrs, int(*cmp)(int i,int j)){
     }
 }
 
+void q2s_(aptr arrs, int head, int tail){
+    int len = arrs->len;
+    int* a = arrs->arr;
+    int l=head, r=tail-1;
+    int pivot = a[tail];
+
+    if (head>=tail) return;
+    while(l<r){
+        while(a[l]>pivot && l<r) {l++;}
+        while(a[r]<=pivot && l<r) {r--;}
+        move(arrs,l,r);
+    }
+    if (a[l]<=pivot){
+        move(arrs,tail,r); //zhe ye xing???? bu shi tail<->l???
+    }else{
+        l++;
+    }
+    if (l){
+        q2s_(arrs,head,l-1);
+    }
+    q2s_(arrs,l+1,tail);
+}
+
+void q2s(aptr arrs){
+    q2s_(arrs,0,arrs->len-1);
+}
+
 void binarySort (aptr arrs){
     ;
 }
@@ -133,40 +160,59 @@ void sampleSort (aptr arrs){
 // test part
 int main(void){
     // test insertion sort, ascend
-    printf("Test1\n");
+    printf("Test1 Insertion sort Ascend\n");
     aptr arrs1 = randaptr(10,100);
     printa(arrs1);
     insertionSort(arrs1,ascend);
     printa(arrs1);
     // test insertion sort, descend
     // sleep    unistd.h 
-    printf("Test2\n");
+    printf("Test2 Insertion sort Descend\n");
     sleep(1);
     aptr arrs2 = randaptr(10,100);
     printa(arrs2);
     insertionSort(arrs2,descend);
     printa(arrs2);
     // test quick sort
-    printf("Test3\n");
+    printf("Test3 Quick sort\n");
     sleep(1);
     aptr arrs3 = randaptr(10,100);
     printa(arrs3);
     quickSort(arrs3);
     printa(arrs3);
     // test bubble sort, descend
-    printf("Test4\n");
+    printf("Test4 Bubble sort Descend\n");
     sleep(1);
     aptr arrs4 = randaptr(10,100);
     printa(arrs4);
     bubbleSort(arrs4,descend);
     printa(arrs4);
     // test selection sort, ascend
-    printf("Test5\n");
+    printf("Test5 Selection sort Ascend\n");
     sleep(1);
     aptr arrs5 = randaptr(10,100);
     printa(arrs5);
     selectionSort(arrs5,ascend);
     printa(arrs5);
+    // test quick sort with same elements
+    printf("Test6 Quick sort with same elements\n");
+    sleep(1);
+    aptr arrs6 = randaptr(10,100);
+    int arr6[] = {1,4,6,2,2,6,4,2,1,4};
+    arrs6->arr = arr6;
+    printa(arrs6);
+    q2s(arrs6);
+    printa(arrs6);
+    quickSort(arrs6);
+    printa(arrs6);
+    // test my q2s
+    printf("Test7 q2s\n");
+    sleep(1);
+    aptr arrs7 = randaptr(10,100);
+    printa(arrs7);
+    q2s(arrs7);
+    printa(arrs7);
+
 
     return 0;
 }
