@@ -33,6 +33,7 @@ int main() {
     LOGI("&stu=%p", &stu);
     LOGI("&stu->head=%p", &stu.head);
     LOGI("&stu->id=%p", &stu.id);
+    LOGI("&stu->id offset=%ld", offset_of(student_t, id));
     LOGI("&container_of(stu->id, student_t, id)=%p", container_of(&stu.id, student_t, id));
 
     teacher_t tch;

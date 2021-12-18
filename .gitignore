@@ -54,6 +54,8 @@ dkms.conf
 
 # drafts
 drafts.c
+drafts++.cpp
+drafts.s
 
 # tempCodeRunnerFile.c
 tempCodeRunnerFile.c
