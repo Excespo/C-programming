@@ -114,7 +114,7 @@ void ikj(int* A, int* B, int* C, int n){
 
     for (i = 0; i < n; i++) {
         for (k = 0; k < n; k++) {
-        sum = A[i*n+k];
+            sum = A[i*n+k];
             for (j = 0; j < n; j++) {
                 C[i*n+j] += sum*B[k*n+j];
             }
@@ -146,7 +146,7 @@ void blocked_ijk(int*A, int* B, int* C, int n) {
 }
 
 int main(void){
-    int n = 4096;
+    int n = 1024*2;
     int *A = (int*)malloc(sizeof(int)*n*n);
     int *B = (int*)malloc(sizeof(int)*n*n);
     int *C = (int*)malloc(sizeof(int)*n*n);
@@ -157,7 +157,6 @@ int main(void){
     printf("In order ijk, ");
 	cnt_time(A,B,C,n,ijk);
 
-    /*
     // jik, 1.25
     init_matrix(A,B,C,n);
     printf("In order jik, ");
@@ -177,7 +176,6 @@ int main(void){
     printf("In order kij, ");
     init_matrix(A,B,C,n);
 	cnt_time(A,B,C,n,kij);
-    */
 
     // ikj, 0.5
     printf("In order ikj, ");
